@@ -27,7 +27,7 @@ class UsuariosController extends Controller
         $usuario->nome = $form->nome;
         $usuario->email = $form->email;
         $usuario->usuario = $form->usuario;
-        $usuario->senha = Hash::make($form->senha);
+        $usuario->password = Hash::make($form->password);
 
         $usuario->save();
 
