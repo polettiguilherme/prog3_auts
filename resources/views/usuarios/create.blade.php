@@ -12,6 +12,11 @@
                 <label for="nome" class="form-label">Nome</label>
                 <input type="text" class="form-control" id="nome" name="nome">
             </div>
+            
+            <div class="mb-3">
+                <label for="admin" class="form-label">Admin</label>
+                <input type="boolean" class="form-control" id="admin" name="admin">
+            </div>
 
             <div class="mb-3">
                 <label for="email" class="form-label">E-mail</label>
@@ -19,13 +24,13 @@
             </div>
 
             <div class="mb-3">
-                <label for="usuario" class="form-label">Usuário</label>
-                <input type="text" class="form-control" id="usuario" name="usuario">
+                <label for="username" class="form-label">Usuário</label>
+                <input type="text" class="form-control" id="username" name="username">
             </div>
 
             <div class="mb-3">
-                <label for="senha" class="form-label">Senha</label>
-                <input type="password" class="form-control" id="senha" name="senha">
+                <label for="password" class="form-label">Senha</label>
+                <input type="password" class="form-control" id="password" name="password">
             </div>
 
             <div class="mb-3">
