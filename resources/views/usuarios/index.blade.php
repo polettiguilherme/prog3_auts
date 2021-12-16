@@ -21,7 +21,7 @@
         </tr>
 
         @foreach ($usuarios as $usuario)
-            @if ($usuario->admin = 1)
+            @if ($usuario->admin == 1)
                 <tr class="table-primary">
                     <td>{{ $usuario->id }}</td>
                     <td>{{ $usuario->nome }}</td>

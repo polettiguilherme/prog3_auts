@@ -29,7 +29,7 @@
                 <a href="{{ route('produtos.show', $prod) }}">{{$prod->nome}}</a>
             </td>
             <td>R$ {{$prod->preco}}</td>
-            @if (Auth::user()->admin = 0)
+            @if (Auth::user()->admin == 0)
                 <td>
                     <a href="{{ route('produtos.edit', $prod) }}" class="btn btn-primary btn-sm" role="button"><i class="bi bi-pencil-square"></i> Editar</a>
                     <a href="{{ route('produtos.remove', $prod) }}" class="btn btn-danger btn-sm" role="button"><i class="bi bi-trash"></i> Apagar</a>

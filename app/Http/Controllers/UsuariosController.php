@@ -48,6 +48,7 @@ class UsuariosController extends Controller
             $credenciais = $form->validate([
                 'username' => ['required'],
                 'password' => ['required'],
+            
             ]);
 
             // Tenta o login
