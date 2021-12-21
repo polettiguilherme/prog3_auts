@@ -52,7 +52,7 @@ class UsuariosController extends Controller
             ]);
 
             // Tenta o login
-            if (Auth::attempt($credenciais))
+            if (Auth::attempt($credenciais, $form->remember == remember-me))
             {
                 session()->regenerate();
                 return redirect()->route('home');
