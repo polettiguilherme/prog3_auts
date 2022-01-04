@@ -59,3 +59,12 @@ Route::get('/email/verify/{id}/{hash}', function
     $request->fulfill();
     return redirect()->route('home');
    })->middleware(['auth', 'signed'])->name('verification.verify');
+
+
+Route::get('profile', [UsuariosController::class, 'profile'])->name('profile');
+
+// Route::prefix('profile')->group(function() {
+    
+//     Route::get('/editar', [UsuariosController::class, 'edit'])->name('usuarios.editar');
+
+// });
