@@ -10,7 +10,7 @@ class ProdutosController extends Controller
     
     public function index()
     {
-        $produtos = Produto::orderBy('id', 'desc')->get();
+        $produtos = Produto::orderBy('nome', 'asc')->get();
 
         return view('produtos.index', ['prods' => $produtos, 'pagina' => 'produtos']);
     }
@@ -27,11 +27,16 @@ class ProdutosController extends Controller
 
     public function insert(Request $form)
     {
+
+        //variável que armazena o caminho para a imagem, para ser guardado no banco de dados
+        $imagemCaminho = $form->file('imagem')->store('', 'imagens');
+
         $prod = new Produto();
 
         $prod->nome = $form->nome;
         $prod->preco = $form->preco;
         $prod->descricao = $form->descricao;
+        $prod->img = $imagemCaminho;
 
         $prod->save();
 

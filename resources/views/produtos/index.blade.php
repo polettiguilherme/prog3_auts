@@ -11,32 +11,28 @@
     </div>
 </div>
 
-<div class="row">
-    <table class="table">
-        <tr>
-            <th>ID</th>
-            <th width="50%">Nome</th>
-            <th>Preço</th>
-            @if (Auth::user()->admin = 0)
-                <th>Gerenciar</th>
-            @endif
-        </tr>
+
+<div class="galeria">
+
+        {{-- pega os produtos da controller, percorre o array e mostra todos --}}
 
         @foreach($prods as $prod)
-        <tr>
-            <td>{{$prod->id}}</td>
-            <td>
-                <a href="{{ route('produtos.show', $prod) }}">{{$prod->nome}}</a>
-            </td>
-            <td>R$ {{$prod->preco}}</td>
-            @if (Auth::user()->admin == 0)
-                <td>
-                    <a href="{{ route('produtos.edit', $prod) }}" class="btn btn-primary btn-sm" role="button"><i class="bi bi-pencil-square"></i> Editar</a>
-                    <a href="{{ route('produtos.remove', $prod) }}" class="btn btn-danger btn-sm" role="button"><i class="bi bi-trash"></i> Apagar</a>
-                </td>
-            @endif
-        </tr>
+        <div class="produto">
+            
+                <div class="img">
+                    <img class="img-fluid" src="{{asset('img/' . $prod->img)}}">
+                </div>    
+                <div class="nome">
+                    <a href="{{ route('produtos.show', $prod) }}">{{$prod->nome}}</a>
+                </div>
+                <div class="preco">
+                    R$ {{$prod->preco}}
+                </div>
+            
+
+        </div>
         @endforeach
-    </table>
+    
 </div>
+
 @endsection

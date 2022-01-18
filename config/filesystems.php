@@ -41,6 +41,15 @@ return [
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
         ],
+        
+        //o link entre as pastas nao estava funcionando, por isso redirecionei as imagens direto pra public. 
+
+        'imagens' => [
+            'driver' => 'local',
+            'root' => public_path('img'),
+            'url' => env('APP_URL').'/img',
+            'visibility' => 'public',
+        ],
 
         's3' => [
             'driver' => 's3',
@@ -68,6 +77,7 @@ return [
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
+        public_path('img') => storage_path('imagens')
     ],
 
 ];
